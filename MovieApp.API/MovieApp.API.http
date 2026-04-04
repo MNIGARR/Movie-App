@@ -1,0 +1,36 @@
+@MovieApp.API_HostAddress = http://localhost:5228
+
+### Register a new user
+POST {{MovieApp.API_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "Password123"
+}
+
+###
+
+### Login
+POST {{MovieApp.API_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "Password123"
+}
+
+###
+
+### Get all movies
+GET {{MovieApp.API_HostAddress}}/api/movies?page=1&pageSize=10
+Accept: application/json
+
+###
+
+### Search movies
+GET {{MovieApp.API_HostAddress}}/api/movies/search?query=batman
+Accept: application/json
+
+###
